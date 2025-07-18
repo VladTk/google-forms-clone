@@ -1,16 +1,23 @@
 import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import { graphqlHTTP } from 'express-graphql';
+import { schema } from './schema';
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
-app.get('/', (req, res) => {
-  res.send('Backend is running!');
-});
+app.use(cors());
+app.use(bodyParser.json());
 
-app.get('/ping', (req, res) => {
-  res.json({ message: 'pong' });
-});
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+  })
+);
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+app.listen(PORT, () =>
+  console.log(`Server ready at http://localhost:${PORT}/graphql`)
+);
