@@ -21,9 +21,24 @@ export const responseResolver = {
       }
 
       const validQuestionIds = new Set(form.questions.map(q => q.id));
+
       for (const answer of answers) {
-        if (!validQuestionIds.has(answer.questionId)) {
-          throw new Error(`Invalid questionId: ${answer.questionId}`);
+        const { questionId, value, values } = answer;
+
+        if (!validQuestionIds.has(questionId)) {
+          throw new Error(`Invalid questionId: ${questionId}`);
+        }
+
+        if (value == null && values == null) {
+          throw new Error(
+            `Answer must have either value or values for questionId: ${questionId}`,
+          );
+        }
+
+        if (value != null && values != null) {
+          throw new Error(
+            `Answer cannot have both value and values for questionId: ${questionId}`,
+          );
         }
       }
 

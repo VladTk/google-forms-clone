@@ -39,12 +39,14 @@ export const typeDefs = `
 
   input AnswerInput {
     questionId: ID!
-    value: String!
+    value: String
+    values: [String!]
   }
 
   type Answer {
     questionId: ID!
-    value: String!
+    value: String
+    values: [String!]
   }
 
   type Response {

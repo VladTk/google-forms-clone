@@ -15,9 +15,9 @@ app.use(
   graphqlHTTP({
     schema,
     graphiql: true,
-  })
+  }),
 );
 
 app.listen(PORT, () =>
-  console.log(`Server ready at http://localhost:${PORT}/graphql`)
+  console.log(`Server ready at http://localhost:${PORT}/graphql`),
 );
