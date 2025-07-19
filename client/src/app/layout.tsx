@@ -1,5 +1,13 @@
 import type { Metadata } from 'next';
-import '../styles/globals.css';
+import '../styles/globals.scss';
+import { Open_Sans } from 'next/font/google';
+import { Header } from '@/components';
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-open-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Google Forms Clone',
@@ -18,8 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={openSans.variable}>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
