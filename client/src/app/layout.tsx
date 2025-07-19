@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '../styles/globals.scss';
 import { Open_Sans } from 'next/font/google';
 import { Header } from '@/shared/layout';
+import { ReduxProvider } from './providers/ReduxProvider';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -28,8 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
       <body>
-        <Header />
-        {children}
+        <ReduxProvider>
+          <Header />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
