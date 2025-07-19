@@ -27,7 +27,8 @@ export type Form = {
 
 export type Answer = {
   questionId: string;
-  value: string | string[];
+  value?: string;
+  values?: string[];
 };
 
 export type Response = {
