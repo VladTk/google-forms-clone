@@ -3,10 +3,11 @@
 import React from 'react';
 import { useGetFormsQuery } from '../../formsApi';
 import { Form } from 'shared/types';
-import { Container } from '@/shared/layout';
+import { Container } from '@/shared/components/layout';
 import { FormCard, FormCardSkeleton } from '../FormCard';
 import styles from './FormList.module.scss';
 import { NewFormCard } from '../NewFormCard';
+import clsx from 'clsx';
 
 export const FormList = () => {
   const { data: forms, isLoading } = useGetFormsQuery();
@@ -21,8 +22,14 @@ export const FormList = () => {
             </li>
 
             {isLoading
-              ? Array.from({ length: 8 }, (_, i) => (
-                  <li key={i} className={styles['form-list__item']}>
+              ? Array.from({ length: 5 }, (_, i) => (
+                  <li
+                    key={i}
+                    className={clsx(
+                      styles['form-list__item'],
+                      styles['form-list__item--loading'],
+                    )}
+                  >
                     <FormCardSkeleton />
                   </li>
                 ))

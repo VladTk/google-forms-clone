@@ -29,5 +29,9 @@
     &:hover {
       border-color: $accent-color;
     }
+
+    &--loading {
+      pointer-events: none;
+    }
   }
 }

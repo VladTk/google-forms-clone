@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '../styles/globals.scss';
 import { Open_Sans } from 'next/font/google';
-import { Header } from '@/shared/layout';
+import { Header } from '@/shared/components/layout';
 import { ReduxProvider } from './providers/ReduxProvider';
 
 const openSans = Open_Sans({
