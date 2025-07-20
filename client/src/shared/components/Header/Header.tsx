@@ -2,7 +2,7 @@
 
 import { Logo } from '../Logo';
 import styles from './Header.module.scss';
-import { Container } from '../../Container';
+import { Container } from '../Container';
 
 export const Header = () => {
   return (
