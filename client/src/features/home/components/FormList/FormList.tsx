@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { useGetFormsQuery } from '../../formsApi';
+import { useGetFormsQuery } from '../../../../shared/api/formsApi';
 import { Form } from 'shared/types';
 import { Container } from '@/shared/components/layout';
-import { FormCard, FormCardSkeleton } from '../FormCard';
+import { FormCard, FormCardSkeleton } from '../../../home/components/FormCard';
 import styles from './FormList.module.scss';
 import { NewFormCard } from '../NewFormCard';
 import clsx from 'clsx';

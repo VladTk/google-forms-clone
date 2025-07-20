@@ -37,7 +37,6 @@ export const responsesApi = createApi({
           variables: { formId },
         },
       }),
-      // Витягуємо масив із data.responses
       transformResponse: (response: GraphQLResponse<{ responses: Resp[] }>) =>
         response.data.responses,
       providesTags: (result = []) =>
@@ -65,7 +64,6 @@ export const responsesApi = createApi({
           variables: payload,
         },
       }),
-      // Витягуємо об’єкт із data.submitResponse
       transformResponse: (response: GraphQLResponse<{ submitResponse: Resp }>) =>
         response.data.submitResponse,
       invalidatesTags: (result, error, { formId }) => [

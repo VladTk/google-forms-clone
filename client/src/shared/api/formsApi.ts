@@ -1,4 +1,3 @@
-// client/src/services/formsApi.ts
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Form, FormInput } from 'shared/types'
 
@@ -35,7 +34,6 @@ export const formsApi = createApi({
           `,
         },
       }),
-      // Витягуємо масив із data.forms
       transformResponse: (response: GraphQLResponse<{ forms: Form[] }>) =>
         response.data.forms,
       providesTags: (result = []) =>
