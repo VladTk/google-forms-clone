@@ -3,7 +3,7 @@ import { forms, responses } from './store/store';
 import { QuestionType, Form, Response } from './types';
 
 export function seedData() {
-  // 1-4 прості форми
+
   for (let i = 1; i <= 4; i++) {
     const formId = uuid();
     const questions = [
@@ -51,7 +51,6 @@ export function seedData() {
     responses.set(response.id, response);
   }
 
-  // 5-та форма з усіма типами питань
   const form5Id = uuid();
   const form5Questions = [
     {
