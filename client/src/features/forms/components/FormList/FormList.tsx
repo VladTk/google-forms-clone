@@ -26,7 +26,7 @@ export const FormList = () => {
                     <FormCardSkeleton />
                   </li>
                 ))
-              : forms?.map((form: Form) => (
+              : [...(forms ?? [])].reverse().map((form: Form) => (
                   <li key={form.id} className={styles['form-list__item']}>
                     <FormCard form={form} />
                   </li>
