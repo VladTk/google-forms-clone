@@ -1,0 +1,16 @@
+@use '../../../../styles/vars' as *;
+
+.new-form {
+  display: flex;
+  background-color: $bg-primary-surface;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius-base;
+  overflow: hidden;
+  height: $form-card-height;
+
+  &__img {
+    object-fit: contain;
+  }
+}
