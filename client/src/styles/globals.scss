@@ -2,8 +2,11 @@
 @use './vars' as *;
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: $bg-color;
-  color: $primary-color;
+  color: $text-primary;
   font-family: var(--font-open-sans), sans-serif;
+  font-size: 14px;
 }
-
