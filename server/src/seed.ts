@@ -20,8 +20,8 @@ export function seedData() {
         label: `Checkbox question ${i}`,
         required: false,
         options: [
-          { id: uuid(), label: "Option A" },
-          { id: uuid(), label: "Option B" },
+          { id: uuid(), label: 'Option A' },
+          { id: uuid(), label: 'Option B' },
         ],
       },
     ];
@@ -44,7 +44,7 @@ export function seedData() {
         },
         {
           questionId: questions[1].id,
-          values: ["Option A"],
+          values: ['Option A'],
         },
       ],
     };
@@ -57,36 +57,36 @@ export function seedData() {
     {
       id: uuid(),
       type: QuestionType.TEXT,
-      label: "Your name",
+      label: 'Your name',
       required: true,
       options: [],
     },
     {
       id: uuid(),
       type: QuestionType.CHECKBOX,
-      label: "Choose your hobbies",
+      label: 'Choose your hobbies',
       required: false,
       options: [
-        { id: uuid(), label: "Music" },
-        { id: uuid(), label: "Sports" },
-        { id: uuid(), label: "Books" },
+        { id: uuid(), label: 'Music' },
+        { id: uuid(), label: 'Sports' },
+        { id: uuid(), label: 'Books' },
       ],
     },
     {
       id: uuid(),
       type: QuestionType.MULTIPLE_CHOICE,
-      label: "Favorite color",
+      label: 'Favorite color',
       required: true,
       options: [
-        { id: uuid(), label: "Red" },
-        { id: uuid(), label: "Green" },
-        { id: uuid(), label: "Blue" },
+        { id: uuid(), label: 'Red' },
+        { id: uuid(), label: 'Green' },
+        { id: uuid(), label: 'Blue' },
       ],
     },
     {
       id: uuid(),
       type: QuestionType.DATE,
-      label: "Date of birth",
+      label: 'Date of birth',
       required: false,
       options: [],
     },
@@ -94,8 +94,17 @@ export function seedData() {
 
   const form5: Form = {
     id: form5Id,
-    title: "Full test form",
-    description: "Form with all question types",
+    title:
+      'Full test form with all basic question types including text inputs, ' +
+      'multiple choice options, checkboxes for multi-select answers, and date ' +
+      'pickers for scheduling or birthdays.',
+
+    description:
+      'This form is designed to validate the layout and behavior of standard form ' +
+      'elements such as TEXT inputs, MULTIPLE_CHOICE questions with several options, ' +
+      'CHECKBOX fields for multi-selections, and DATE pickers. It helps ensure all ' +
+      'supported question types display correctly and behave as expected, even with ' +
+      'long labels and complex input scenarios.',
     questions: form5Questions,
   };
   forms.set(form5Id, form5);
@@ -111,11 +120,12 @@ export function seedData() {
         },
         {
           questionId: form5Questions[1].id,
-          values: i === 1 ? ["Music", "Books"] : i === 2 ? ["Sports"] : ["Music"],
+          values:
+            i === 1 ? ['Music', 'Books'] : i === 2 ? ['Sports'] : ['Music'],
         },
         {
           questionId: form5Questions[2].id,
-          value: i === 1 ? "Red" : i === 2 ? "Green" : "Blue",
+          value: i === 1 ? 'Red' : i === 2 ? 'Green' : 'Blue',
         },
         {
           questionId: form5Questions[3].id,
